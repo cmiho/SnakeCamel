@@ -22,7 +22,7 @@ public class SnakeCamelUtil {
 				sb.append(camelcase.substring(j, i));
 				if (sb.length() > 0) {
 					sb.append("_");
-					j++;/////////
+					//j++;/////////
 				}
 				sb.append(Character.toLowerCase(c));
 				
