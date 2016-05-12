@@ -5,8 +5,10 @@ public class SnakeCamelUtil {
 	public static String snakeToCamelcase(String snake_case) {
 		String[] words = snake_case.split("_");//文字を分割する
 		StringBuilder sb = new StringBuilder();
+		//sb.append(test);
 		for (int i = 0; i < words.length; i++) {
-			sb.append(capitalize(words[i]));
+			if(words[i].equals(null)||!words[i].equals(""))
+				sb.append(capitalize(words[i]));
 		}
 		return new String(sb);
 	}
@@ -32,6 +34,7 @@ public class SnakeCamelUtil {
 	}
 	
 	static String capitalize(String s) {
+		if(s=="") return "";
 		char first = s.charAt(0);
 		char upperFirst = Character.toUpperCase(first);
 		String rest = s.substring(1);
@@ -39,6 +42,7 @@ public class SnakeCamelUtil {
 	}
 
 	static String uncapitalize(String s) {
+		if(s=="") return "";
 		char first = s.charAt(0);
 		char lowerFirst = Character.toLowerCase(first);
 		String rest = s.substring(1);
